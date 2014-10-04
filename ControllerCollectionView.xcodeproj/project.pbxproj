@@ -14,6 +14,9 @@
 		5C1B50F319E07E6300CCD3CA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5C1B50F219E07E6300CCD3CA /* Images.xcassets */; };
 		5C1B50F619E07E6300CCD3CA /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5C1B50F419E07E6300CCD3CA /* LaunchScreen.xib */; };
 		5C1B510219E07E6300CCD3CA /* ControllerCollectionViewTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C1B510119E07E6300CCD3CA /* ControllerCollectionViewTests.m */; };
+		5C1B510D19E07E8000CCD3CA /* WMLControllerCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C1B510C19E07E8000CCD3CA /* WMLControllerCollectionView.m */; };
+		5C1B511219E07EB300CCD3CA /* WMLCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C1B511119E07EB300CCD3CA /* WMLCollectionViewCell.m */; };
+		5CB7515919E08AEF00252F42 /* HostedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CB7515819E08AEF00252F42 /* HostedViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +43,15 @@
 		5C1B50FB19E07E6300CCD3CA /* ControllerCollectionViewTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ControllerCollectionViewTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C1B510019E07E6300CCD3CA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5C1B510119E07E6300CCD3CA /* ControllerCollectionViewTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ControllerCollectionViewTests.m; sourceTree = "<group>"; };
+		5C1B510B19E07E8000CCD3CA /* WMLControllerCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMLControllerCollectionView.h; sourceTree = "<group>"; };
+		5C1B510C19E07E8000CCD3CA /* WMLControllerCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMLControllerCollectionView.m; sourceTree = "<group>"; };
+		5C1B511019E07EB300CCD3CA /* WMLCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMLCollectionViewCell.h; sourceTree = "<group>"; };
+		5C1B511119E07EB300CCD3CA /* WMLCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMLCollectionViewCell.m; sourceTree = "<group>"; };
+		5C1B511619E07F3200CCD3CA /* WMLCollectionViewCellDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMLCollectionViewCellDelegate.h; sourceTree = "<group>"; };
+		5C1B511719E07FD500CCD3CA /* Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Prefix.pch; sourceTree = "<group>"; };
+		5CB7515619E0832400252F42 /* WMLCollectionViewCell+Internal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WMLCollectionViewCell+Internal.h"; sourceTree = "<group>"; };
+		5CB7515719E08AEF00252F42 /* HostedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HostedViewController.h; sourceTree = "<group>"; };
+		5CB7515819E08AEF00252F42 /* HostedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HostedViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,10 +97,14 @@
 				5C1B50EA19E07E6300CCD3CA /* AppDelegate.m */,
 				5C1B50EC19E07E6300CCD3CA /* ViewController.h */,
 				5C1B50ED19E07E6300CCD3CA /* ViewController.m */,
+				5CB7515719E08AEF00252F42 /* HostedViewController.h */,
+				5CB7515819E08AEF00252F42 /* HostedViewController.m */,
+				5C1B510E19E07E9C00CCD3CA /* Controller Collection View */,
 				5C1B50EF19E07E6300CCD3CA /* Main.storyboard */,
 				5C1B50F219E07E6300CCD3CA /* Images.xcassets */,
 				5C1B50F419E07E6300CCD3CA /* LaunchScreen.xib */,
 				5C1B50E519E07E6300CCD3CA /* Supporting Files */,
+				5C1B511719E07FD500CCD3CA /* Prefix.pch */,
 			);
 			path = ControllerCollectionView;
 			sourceTree = "<group>";
@@ -117,6 +133,19 @@
 				5C1B510019E07E6300CCD3CA /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		5C1B510E19E07E9C00CCD3CA /* Controller Collection View */ = {
+			isa = PBXGroup;
+			children = (
+				5C1B511019E07EB300CCD3CA /* WMLCollectionViewCell.h */,
+				5C1B511119E07EB300CCD3CA /* WMLCollectionViewCell.m */,
+				5CB7515619E0832400252F42 /* WMLCollectionViewCell+Internal.h */,
+				5C1B511619E07F3200CCD3CA /* WMLCollectionViewCellDelegate.h */,
+				5C1B510B19E07E8000CCD3CA /* WMLControllerCollectionView.h */,
+				5C1B510C19E07E8000CCD3CA /* WMLControllerCollectionView.m */,
+			);
+			name = "Controller Collection View";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -220,8 +249,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				5C1B50EE19E07E6300CCD3CA /* ViewController.m in Sources */,
+				5CB7515919E08AEF00252F42 /* HostedViewController.m in Sources */,
 				5C1B50EB19E07E6300CCD3CA /* AppDelegate.m in Sources */,
 				5C1B50E819E07E6300CCD3CA /* main.m in Sources */,
+				5C1B511219E07EB300CCD3CA /* WMLCollectionViewCell.m in Sources */,
+				5C1B510D19E07E8000CCD3CA /* WMLControllerCollectionView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -343,6 +375,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PREFIX_HEADER = ControllerCollectionView/Prefix.pch;
 				INFOPLIST_FILE = ControllerCollectionView/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -353,6 +386,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PREFIX_HEADER = ControllerCollectionView/Prefix.pch;
 				INFOPLIST_FILE = ControllerCollectionView/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -412,6 +446,7 @@
 				5C1B510719E07E6300CCD3CA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5C1B510819E07E6300CCD3CA /* Build configuration list for PBXNativeTarget "ControllerCollectionViewTests" */ = {
 			isa = XCConfigurationList;
@@ -420,6 +455,7 @@
 				5C1B510A19E07E6300CCD3CA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
