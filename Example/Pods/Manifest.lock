@@ -1,0 +1,20 @@
+PODS:
+  - FBSnapshotTestCase (1.2)
+  - Kiwi (2.3.0)
+  - Voltron (0.1.0)
+
+DEPENDENCIES:
+  - FBSnapshotTestCase
+  - Kiwi
+  - Voltron (from `../`)
+
+EXTERNAL SOURCES:
+  Voltron:
+    :path: ../
+
+SPEC CHECKSUMS:
+  FBSnapshotTestCase: 4159bdf235fdae25aa7d813f1452a4f05ad4f9cd
+  Kiwi: 54bece5b35564d9b8e03c608d926f1a22fcfc589
+  Voltron: a74edad179bd4ffae2a0c988e9f7ea842c65e089
+
+COCOAPODS: 0.34.2
