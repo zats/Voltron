@@ -1,4 +1,6 @@
-# :cow::dog: Moof!
+![Illustration](https://raw.github.com/laugga/fieldkit/master/Illustration-1@2x.png)
+
+:cow::dog: Moof!
 
 # Voltron
 
