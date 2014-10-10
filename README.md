@@ -1,41 +1,84 @@
 # Voltron
 
+`UICollectionView` with `UIViewController`s instad of cells.
+
 ![Illustration](https://raw.github.com/zats/Voltron/master/Illustration-1@2x.png)
 
-## Usage
-
-To run the example project, clone the repo, and run `pod install` from the Example directory first.
-
-### 1. Use `WMLCollectionView` and `WMLCollectionViewCell`
-
-### 2. Implement a data source method
-
-```objective-c
-- (UIViewController *)controllerCollectionView:(WMLCollectionView *)collectionView controllerForIdentifier:(NSString *)identifier {
-    if ([identifier isEqualToString:@"Login"]) {
-        return [self.storyboard instantiateViewControllerWithIdentifier:@"LoginViewController"];
-    } else if ([identifier isEqualToString:@"Profile"]) {
-        return [self.storyboard instantiateViewControllerWithIdentifier:@"UserProfileViewController"];
-    }
-}
-```
-
-*<small>The method is called only when a new view controller being created.</small>*
-
-### 3. Profit!
-
-And yes, you can use regular cells along side with view controller container cells.
-
-## With great power…
-
-You should keep in mind that
+View controller containment complient!
 
 ## Installation
 
 Voltron is available through [CocoaPods](http://cocoapods.org). To install
 it, simply add the following line to your Podfile:
 
-    pod "Voltron"
+    pod "Voltron", '~> x.x.x'
+
+## Usage
+
+To run the example project, clone the repo, and run `pod install` from the Example directory first.
+
+0. `#import <Voltron/Voltron.h>`
+
+0. Use `WMLCollectionView` instead of `UICollectionView` and `WMLCollectionViewCell` for cells that are going to be replaced with controllers.
+
+0. Set the `collectionView.containerViewController` to the view controller that is going to host children.
+
+0. Implement a data source method:
+```objective-c
+    - (UIViewController *)collectionView:(WMLCollectionView *)collectionView controllerForIdentifier:(NSString *)identifier {
+        if ([identifier isEqualToString:@"Login"]) {
+            return [self.storyboard instantiateViewControllerWithIdentifier:@"LoginViewController"];
+        } else if ([identifier isEqualToString:@"Profile"]) {
+            return [self.storyboard instantiateViewControllerWithIdentifier:@"UserProfileViewController"];
+        }
+    }
+```
+
+0. Once done displaying cell, call `didEndDisplayingCell:` passing the cell to give to the collection view a clue that it can be recycled.
+
+## FAQ
+
+### Can `WMLCollectionView` host the regular cells along with view controller-based cells?
+
+Yes.
+
+### How often is the `collectionView:controllerForIdentifier:` being called?
+
+The data source method is called only when a new view controller being created, when possible, view controllers are being reused just like regular cells.
+
+### Is it a good place to configure my view controller with data?
+
+It's definitely not. Only one time initialisation, and that is better be done in `viewDidLoad` of the loaded view controller.
+
+To configure your view controller with data, use `-[WMLCollectionViewCell contentViewController]`
+
+### What about the view controller lifecycle?
+
+The lifecycle of the view controller is preserved. When the view controller is about to be displayed, `viewWillAppear:` and `viewDidAppear:` are triggered.
+
+Once the view controller goes away from the screen, `viewWillDisappear:` and `viewDidDisappear:` are triggered.
+
+### Performance?
+
+You should keep in mind that in performance critical areas might suffer when you're trying to display too many cells simultaneously.
+
+Be wise about the moment of filling the collection view with data. E.g. it's probably better to differ displaying 200 small cells while playing an opening transition.
+
+For smooth scrolling try to differ the population of the controller with data.
+
+In that sense, test project is intended just as a showcase of how to use the API, but it's obviously not a typical usecase from performance point of view.
+
+### Why all the hassle with `collectionView:didEndDisplayingCell:forItemAtIndexPath:`?
+
+This project is intended as App Store-complient, therefore I wanted to implement it using the public API only.
+
+### Why not to use `collectionView:willDisplayCell:forItemAtIndexPath:` then?
+
+Project is intended to be iOS 7 compatible. Sadly, delegate method above is iOS 8+. Also, that's why you have to use a custom `WMLCollectionViewCell`. To notify collection view that it's about to be shown.
+
+### Why "Voltron"?
+
+[![Illustration](https://raw.github.com/zats/Voltron/master/Votron.jpg)](http://en.wikipedia.org/wiki/Voltron)
 
 ## License
 
@@ -46,9 +89,3 @@ Voltron is available under the MIT license. See the LICENSE file for more info.
 Sash Zats, sash@zats.io
 
 :cow::dog: Moof!
-
-## Why "Voltron"?
-
-This guy!
-
-![Illustration](https://raw.github.com/zats/Voltron/master/Votron.png)
