@@ -19,9 +19,9 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 
 * `#import <Voltron/Voltron.h>`
 
-* Use `WMLCollectionView` instead of `UICollectionView` and `WMLCollectionViewCell` for cells that are going to be replaced with controllers.
+* Use `WMLCollectionView` instead of `UICollectionView` and `WMLCollectionViewCell` for cells, displaying view controllers.
 
-* Set the `collectionView.containerViewController` to the view controller that is going to host children.
+* Set the `collectionView.containerViewController` to the view controller that is hosting children view controllers.
 
 * Implement a data source method:
 ```objective-c
@@ -84,6 +84,7 @@ Project is intended to be iOS 7 compatible. Sadly, delegate method above is iOS 
 
 ### Why "Voltron"?
 
+I really don't know, meanwhile, an unrelated picture.
 [![Illustration](https://raw.github.com/zats/Voltron/master/Votron.jpg)](http://en.wikipedia.org/wiki/Voltron)
 
 ## License
