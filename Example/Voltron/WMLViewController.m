@@ -27,45 +27,50 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     
-    NSLog(@"Hello");
-}
-
-- (void)viewDidAppear:(BOOL)animated {
-    [super viewDidAppear:animated];
-    
-    static NSArray *WMLColors;
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        WMLColors = @[
-                      [UIColor colorWithRed:0.812 green:0.941 blue:0.620 alpha:1.000],
-                      [UIColor colorWithRed:0.659 green:0.859 blue:0.659 alpha:1.000],
-                      [UIColor colorWithRed:0.475 green:0.741 blue:0.604 alpha:1.000],
-                      [UIColor colorWithRed:0.231 green:0.525 blue:0.525 alpha:1.000],
-                      [UIColor colorWithRed:0.043 green:0.282 blue:0.420 alpha:1.000]
-                      ];
-    });
-    self.collectionView.backgroundColor = WMLColors[self.depth];
+    [self _updateBackgroundColor];
 }
 
 #pragma mark - Private
 
-- (BOOL)_shouldHaveKids {
-    return self.depth <= 2;
+- (void)_updateBackgroundColor {
+    static NSArray *WMLColors;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        WMLColors = @[
+            [UIColor colorWithRed:0.812 green:0.941 blue:0.620 alpha:1.000],
+            [UIColor colorWithRed:0.659 green:0.859 blue:0.659 alpha:1.000],
+            [UIColor colorWithRed:0.475 green:0.741 blue:0.604 alpha:1.000],
+            [UIColor colorWithRed:0.231 green:0.525 blue:0.525 alpha:1.000],
+            [UIColor colorWithRed:0.043 green:0.282 blue:0.420 alpha:1.000]
+        ];
+    });
+    self.collectionView.backgroundColor = WMLColors[self.depth];
 }
 
-#pragma mark - UIViewController
-
-- (void)viewDidLayoutSubviews {
-    [super viewDidLayoutSubviews];
-    
+- (void)_updateItemSize {
     if (![self _shouldHaveKids]) {
         return;
     }
-
+    
     UICollectionViewFlowLayout *layout = (UICollectionViewFlowLayout *)self.collectionView.collectionViewLayout;
     CGFloat sectionInset = layout.sectionInset.left + layout.sectionInset.right;
     CGFloat itemSize = floor((CGRectGetWidth(self.view.bounds) - sectionInset - layout.minimumInteritemSpacing) / 2);
     layout.itemSize = CGSizeMake(itemSize, itemSize);
+}
+
+- (BOOL)_shouldHaveKids {
+    return self.depth <= 3;
+}
+
+#pragma mark - UIViewController
+
+- (UIStatusBarStyle)preferredStatusBarStyle {
+    return UIStatusBarStyleLightContent;
+}
+
+- (void)viewDidLayoutSubviews {
+    [super viewDidLayoutSubviews];
+    [self _updateItemSize];
 }
 
 #pragma mark - UICollectionViewDelegate
