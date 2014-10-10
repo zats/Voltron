@@ -5,7 +5,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
     </dependencies>
     <scenes>
-        <!--Table View Controller-->
+        <!--Examples-->
         <scene sceneID="32L-Z5-WCT">
             <objects>
                 <tableViewController id="8ff-en-S9T" sceneMemberID="viewController">
@@ -21,7 +21,7 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="HI1-Kh-vBD" id="AwN-Tp-LL5">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="bOP-rG-hiX">
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Recursive" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="bOP-rG-hiX">
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -69,13 +69,13 @@
                             <outlet property="delegate" destination="8ff-en-S9T" id="PVD-Js-5La"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="DOw-kC-ryr"/>
+                    <navigationItem key="navigationItem" title="Examples" id="DOw-kC-ryr"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xKw-0z-8dz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2044" y="378"/>
         </scene>
-        <!--View Controller-->
+        <!--Recursive-->
         <scene sceneID="VhC-O9-Oc4">
             <objects>
                 <viewController storyboardIdentifier="WMLViewController" id="w0x-be-h0I" customClass="WMLViewController" sceneMemberID="viewController">
@@ -88,13 +88,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ciO-QH-5Eh" customClass="WMLControllerCollectionView">
-                                <rect key="frame" x="5" y="5" width="590" height="590"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="5" minimumInteritemSpacing="5" id="20n-E2-LqY">
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="20n-E2-LqY">
                                     <size key="itemSize" width="100" height="100"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                    <inset key="sectionInset" minX="10" minY="10" maxX="10" maxY="10"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="YHT-xa-dpc" customClass="WMLCollectionViewCell">
@@ -116,13 +116,13 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="ciO-QH-5Eh" firstAttribute="leading" secondItem="EM2-LP-dJb" secondAttribute="leading" constant="5" id="E0Z-jL-n23"/>
-                            <constraint firstItem="ciO-QH-5Eh" firstAttribute="top" secondItem="EM2-LP-dJb" secondAttribute="top" constant="5" id="VAC-U7-aOX"/>
-                            <constraint firstAttribute="trailing" secondItem="ciO-QH-5Eh" secondAttribute="trailing" constant="5" id="coQ-1j-VNF"/>
-                            <constraint firstItem="ep6-ov-bAX" firstAttribute="top" secondItem="ciO-QH-5Eh" secondAttribute="bottom" constant="5" id="w5o-YN-xih"/>
+                            <constraint firstItem="ciO-QH-5Eh" firstAttribute="leading" secondItem="EM2-LP-dJb" secondAttribute="leading" id="E0Z-jL-n23"/>
+                            <constraint firstItem="ciO-QH-5Eh" firstAttribute="top" secondItem="EM2-LP-dJb" secondAttribute="top" id="VAC-U7-aOX"/>
+                            <constraint firstAttribute="trailing" secondItem="ciO-QH-5Eh" secondAttribute="trailing" id="coQ-1j-VNF"/>
+                            <constraint firstItem="ep6-ov-bAX" firstAttribute="top" secondItem="ciO-QH-5Eh" secondAttribute="bottom" id="w5o-YN-xih"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="odW-36-kGV"/>
+                    <navigationItem key="navigationItem" title="Recursive" id="odW-36-kGV"/>
                     <connections>
                         <outlet property="collectionView" destination="ciO-QH-5Eh" id="gGT-av-thw"/>
                     </connections>
