@@ -10,19 +10,18 @@
 Pod::Spec.new do |s|
   s.name             = "Voltron"
   s.version          = "0.1.0"
-  s.summary          = "A short description of Voltron."
+  s.summary          = "UICollectionViewCell meets UIViewController"
   s.description      = <<-DESC
-                       An optional longer description of Voltron
-
-                       * Markdown format.
-                       * Don't worry about the indent, we strip it!
+                       When UICollectionViewCell simply won't cut it, try Voltron,
+                       a simple subclass of UICollectionView allowing to use
+                       view controllers instead of cells.
                        DESC
-  s.homepage         = "https://github.com/<GITHUB_USERNAME>/Voltron"
+  s.homepage         = "https://github.com/zats/Voltron"
   # s.screenshots     = "www.example.com/screenshots_1", "www.example.com/screenshots_2"
   s.license          = 'MIT'
   s.author           = { "Sash Zats" => "sash@zats.io" }
-  s.source           = { :git => "https://github.com/<GITHUB_USERNAME>/Voltron.git", :tag => s.version.to_s }
-  # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
+  s.source           = { :git => "https://github.com/zats/Voltron", :tag => s.version.to_s }
+  s.social_media_url = 'https://twitter.com/zats'
 
   s.platform     = :ios, '7.0'
   s.requires_arc = true
@@ -32,7 +31,5 @@ Pod::Spec.new do |s|
     'Voltron' => ['Pod/Assets/*.png']
   }
 
-  # s.public_header_files = 'Pod/Classes/**/*.h'
-  # s.frameworks = 'UIKit', 'MapKit'
-  # s.dependency 'AFNetworking', '~> 2.3'
+  s.frameworks = 'UIKit'
 end
