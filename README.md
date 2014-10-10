@@ -1,4 +1,4 @@
-![Illustration](https://raw.github.com/laugga/fieldkit/master/Illustration-1@2x.png)
+![Illustration](https://raw.github.com/zats/Voltron/master/Illustration-1@2x.png)
 
 :cow::dog: Moof!
 
