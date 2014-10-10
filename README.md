@@ -17,24 +17,30 @@ it, simply add the following line to your Podfile:
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
 
-0. `#import <Voltron/Voltron.h>`
+* `#import <Voltron/Voltron.h>`
 
-0. Use `WMLCollectionView` instead of `UICollectionView` and `WMLCollectionViewCell` for cells that are going to be replaced with controllers.
+* Use `WMLCollectionView` instead of `UICollectionView` and `WMLCollectionViewCell` for cells that are going to be replaced with controllers.
 
-0. Set the `collectionView.containerViewController` to the view controller that is going to host children.
+* Set the `collectionView.containerViewController` to the view controller that is going to host children.
 
-0. Implement a data source method:
+* Implement a data source method:
 ```objective-c
-    - (UIViewController *)collectionView:(WMLCollectionView *)collectionView controllerForIdentifier:(NSString *)identifier {
-        if ([identifier isEqualToString:@"Login"]) {
-            return [self.storyboard instantiateViewControllerWithIdentifier:@"LoginViewController"];
-        } else if ([identifier isEqualToString:@"Profile"]) {
-            return [self.storyboard instantiateViewControllerWithIdentifier:@"UserProfileViewController"];
-        }
+- (UIViewController *)collectionView:(WMLCollectionView *)collectionView controllerForIdentifier:(NSString *)identifier {
+    if ([identifier isEqualToString:@"Login"]) {
+        return [self.storyboard instantiateViewControllerWithIdentifier:@"LoginViewController"];
+    } else if ([identifier isEqualToString:@"Profile"]) {
+        return [self.storyboard instantiateViewControllerWithIdentifier:@"UserProfileViewController"];
     }
+}
 ```
 
-0. Once done displaying cell, call `didEndDisplayingCell:` passing the cell to give to the collection view a clue that it can be recycled.
+* Once done displaying cell, call `didEndDisplayingCell:` passing the cell to give to the collection view a clue that it can be recycled.
+
+```objective-c
+- (void)collectionView:(WMLCollectionView *)collectionView didEndDisplayingCell:(UICollectionViewCell *)cell forItemAtIndexPath:(NSIndexPath *)indexPath {
+    [collectionView didEndDisplayingCell:cell];
+}
+```
 
 ## FAQ
 
@@ -66,7 +72,7 @@ Be wise about the moment of filling the collection view with data. E.g. it's pro
 
 For smooth scrolling try to differ the population of the controller with data.
 
-In that sense, test project is intended just as a showcase of how to use the API, but it's obviously not a typical usecase from performance point of view.
+In that sense, test project is intended just as a showcase of how to use the API, but it's obviously not a typical use case from performance point of view.
 
 ### Why all the hassle with `collectionView:didEndDisplayingCell:forItemAtIndexPath:`?
 

@@ -90,7 +90,8 @@
 
 #pragma mark - UICollectionViewDelegate
 
-- (void)collectionView:(WMLCollectionView *)collectionView didEndDisplayingCell:(UICollectionViewCell *)cell
+- (void)collectionView:(WMLCollectionView *)collectionView
+  didEndDisplayingCell:(UICollectionViewCell *)cell
     forItemAtIndexPath:(NSIndexPath *)indexPath {
     [collectionView didEndDisplayingCell:cell];
 }
