@@ -9,18 +9,17 @@
 
 Pod::Spec.new do |s|
   s.name             = "Voltron"
-  s.version          = "0.1.0"
+  s.version          = "0.2.0"
   s.summary          = "UICollectionViewCell meets UIViewController"
   s.description      = <<-DESC
                        When UICollectionViewCell simply won't cut it, try Voltron,
-                       a simple subclass of UICollectionView allowing to use
-                       view controllers instead of cells.
+                       a subclass of UICollectionView allowing to use view
+                       controllers instead of cells.
                        DESC
   s.homepage         = "https://github.com/zats/Voltron"
-  # s.screenshots     = "www.example.com/screenshots_1", "www.example.com/screenshots_2"
   s.license          = 'MIT'
   s.author           = { "Sash Zats" => "sash@zats.io" }
-  s.source           = { :git => "https://github.com/zats/Voltron", :tag => s.version.to_s }
+  s.source           = { :git => "https://github.com/zats/Voltron.git", :tag => s.version.to_s }
   s.social_media_url = 'https://twitter.com/zats'
 
   s.platform     = :ios, '7.0'
