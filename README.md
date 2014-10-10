@@ -1,3 +1,5 @@
+# :cow::dog: Moof!
+
 # Voltron
 
 [![CI Status](http://img.shields.io/travis/Sash Zats/Voltron.svg?style=flat)](https://travis-ci.org/Sash Zats/Voltron)
@@ -25,4 +27,3 @@ Sash Zats, sash@zats.io
 ## License
 
 Voltron is available under the MIT license. See the LICENSE file for more info.
-
