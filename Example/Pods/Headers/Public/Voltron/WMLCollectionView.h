@@ -1,1 +1,1 @@
-../../../../../Pod/Classes/WMLControllerCollectionView.h
+../../../../../Pod/Classes/WMLCollectionView.h

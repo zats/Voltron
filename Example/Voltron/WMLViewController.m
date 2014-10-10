@@ -73,7 +73,7 @@
     [self _updateItemSize];
 }
 
-#pragma mark - UICollectionViewDelegate
+#pragma mark - UICollectionViewDataSource
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
     return [self _shouldHaveKids] ? 10 : 0;
@@ -88,12 +88,17 @@
     return cell;
 }
 
-#pragma mark - UICollectionViewDataSource
+#pragma mark - UICollectionViewDelegate
+
+- (void)collectionView:(WMLCollectionView *)collectionView didEndDisplayingCell:(UICollectionViewCell *)cell
+    forItemAtIndexPath:(NSIndexPath *)indexPath {
+    [collectionView didEndDisplayingCell:cell];
+}
 
 #pragma mark - WMLControllerCollectionViewDataSource
 
-- (UIViewController *)controllerCollectionView:(WMLCollectionView *)collectionView
-                       controllerForIdentifier:(NSString *)identifier {
+- (UIViewController *)collectionView:(WMLCollectionView *)collectionView
+             controllerForIdentifier:(NSString *)identifier {
     if ([identifier isEqualToString:@"Cell"]) {
         return [self.storyboard instantiateViewControllerWithIdentifier:NSStringFromClass([self class])];
     }

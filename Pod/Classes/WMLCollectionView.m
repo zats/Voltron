@@ -28,8 +28,8 @@
     cell.contentView.backgroundColor = [UIColor grayColor];
     cell.delegate = self;
     if (!cell.contentViewController) {
-        UIViewController *controller = [self.dataSource controllerCollectionView:self
-                                                         controllerForIdentifier:identifier];
+        UIViewController *controller = [self.dataSource collectionView:self
+                                               controllerForIdentifier:identifier];
         NSAssert(controller && [controller isKindOfClass:[UIViewController class]], @"The collection view's data source did not return a valid view controller for identifier %@", identifier);
         cell.contentViewController = controller;
     }
@@ -39,6 +39,9 @@
 #pragma mark - Public
 
 - (void)didEndDisplayingCell:(WMLCollectionViewCell *)cell {
+    if (![cell isKindOfClass:[WMLCollectionViewCell class]]) {
+        return;
+    }
     UIViewController *controller = cell.contentViewController;
     [self _unhostViewController:controller];
 }
