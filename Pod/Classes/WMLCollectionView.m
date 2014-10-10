@@ -1,22 +1,22 @@
 //
-//  WMLControllerCollectionView.m
+//  WMLCollectionView.m
 //  ControllerCollectionView
 //
 //  Created by Sash Zats on 10/4/14.
 //  Copyright (c) 2014 Wondermall. All rights reserved.
 //
 
-#import "WMLControllerCollectionView.h"
+#import "WMLCollectionView.h"
 
 #import "WMLCollectionViewCell.h"
 #import "WMLCollectionViewCell+Internal.h"
 #import "WMLCollectionViewCellDelegate.h"
 
-@interface WMLControllerCollectionView () <WMLCollectionViewCellDelegate>
+@interface WMLCollectionView () <WMLCollectionViewCellDelegate>
 
 @end
 
-@implementation WMLControllerCollectionView
+@implementation WMLCollectionView
 
 - (id)dequeueReusableCellWithReuseIdentifier:(NSString *)identifier
                                 forIndexPath:(NSIndexPath *)indexPath {

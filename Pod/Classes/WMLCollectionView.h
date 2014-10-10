@@ -1,5 +1,5 @@
 //
-//  WMLControllerCollectionView.h
+//  WMLCollectionView.h
 //  ControllerCollectionView
 //
 //  Created by Sash Zats on 10/4/14.
@@ -8,18 +8,18 @@
 
 #import <UIKit/UIKit.h>
 
-@class WMLControllerCollectionView;
+@class WMLCollectionView;
 @protocol WMLControllerCollectionViewDataSource <UICollectionViewDataSource>
 
 @required
-- (UIViewController *)controllerCollectionView:(WMLControllerCollectionView *)collectionView
+- (UIViewController *)controllerCollectionView:(WMLCollectionView *)collectionView
                        controllerForIdentifier:(NSString *)identifier;
 
 @end
 
 
 @class WMLCollectionViewCell;
-@interface WMLControllerCollectionView : UICollectionView
+@interface WMLCollectionView : UICollectionView
 
 @property (nonatomic, weak) IBOutlet id<WMLControllerCollectionViewDataSource> dataSource;
 

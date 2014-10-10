@@ -7,4 +7,4 @@
 //
 
 #import "WMLCollectionViewCell.h"
-#import "WMLControllerCollectionView.h"
+#import "WMLCollectionView.h"

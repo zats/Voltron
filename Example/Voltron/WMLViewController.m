@@ -11,7 +11,7 @@
 #import <Voltron/Voltron.h>
 
 @interface WMLViewController () <UICollectionViewDelegate, UICollectionViewDataSource, WMLControllerCollectionViewDataSource>
-@property (nonatomic, weak) IBOutlet WMLControllerCollectionView *collectionView;
+@property (nonatomic, weak) IBOutlet WMLCollectionView *collectionView;
 @property (nonatomic) NSUInteger depth;
 @end
 
@@ -92,7 +92,7 @@
 
 #pragma mark - WMLControllerCollectionViewDataSource
 
-- (UIViewController *)controllerCollectionView:(WMLControllerCollectionView *)collectionView
+- (UIViewController *)controllerCollectionView:(WMLCollectionView *)collectionView
                        controllerForIdentifier:(NSString *)identifier {
     if ([identifier isEqualToString:@"Cell"]) {
         return [self.storyboard instantiateViewControllerWithIdentifier:NSStringFromClass([self class])];

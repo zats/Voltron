@@ -6,10 +6,12 @@
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
 
-Simply implement an additional data source method:
+### 1. Use `WMLCollectionView` and `WMLCollectionViewCell`
+
+### 2. Implement a data source method
 
 ```objective-c
-- (UIViewController *)controllerCollectionView:(WMLControllerCollectionView *)collectionView controllerForIdentifier:(NSString *)identifier {
+- (UIViewController *)controllerCollectionView:(WMLCollectionView *)collectionView controllerForIdentifier:(NSString *)identifier {
     if ([identifier isEqualToString:@"Login"]) {
         return [self.storyboard instantiateViewControllerWithIdentifier:@"LoginViewController"];
     } else if ([identifier isEqualToString:@"Profile"]) {
@@ -18,12 +20,15 @@ Simply implement an additional data source method:
 }
 ```
 
-The method is called only when a new view controller being created.
+*<small>The method is called only when a new view controller being created.</small>*
 
-You can use regular cells along side with view controller container cells.
+### 3. Profit!
 
+And yes, you can use regular cells along side with view controller container cells.
 
-## Requirements
+## With great power…
+
+You should keep in mind that
 
 ## Installation
 
@@ -32,12 +37,18 @@ it, simply add the following line to your Podfile:
 
     pod "Voltron"
 
-## Author
-
-Sash Zats, sash@zats.io
-
 ## License
 
 Voltron is available under the MIT license. See the LICENSE file for more info.
 
+## Author
+
+Sash Zats, sash@zats.io
+
 :cow::dog: Moof!
+
+## Why "Voltron"?
+
+This guy!
+
+![Illustration](https://raw.github.com/zats/Voltron/master/Votron.png)
