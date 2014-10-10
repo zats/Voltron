@@ -1,0 +1,12 @@
+source 'https://github.com/CocoaPods/Specs.git'
+
+target 'Voltron', :exclusive => true do
+  pod "Voltron", :path => "../"
+end
+
+target 'Tests', :exclusive => true do
+  pod "Voltron", :path => "../"
+
+  pod 'Kiwi'
+  pod 'FBSnapshotTestCase'
+end
