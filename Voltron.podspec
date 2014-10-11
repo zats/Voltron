@@ -9,7 +9,7 @@
 
 Pod::Spec.new do |s|
   s.name             = "Voltron"
-  s.version          = "0.2.0"
+  s.version          = "0.2.1"
   s.summary          = "UICollectionViewCell meets UIViewController"
   s.description      = <<-DESC
                        When UICollectionViewCell simply won't cut it, try Voltron,
