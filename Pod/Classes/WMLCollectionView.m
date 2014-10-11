@@ -25,7 +25,6 @@
     if (![cell isKindOfClass:[WMLCollectionViewCell class]]) {
         return cell;
     }
-    cell.contentView.backgroundColor = [UIColor grayColor];
     cell.delegate = self;
     if (!cell.contentViewController) {
         UIViewController *controller = [self.dataSource collectionView:self
