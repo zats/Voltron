@@ -1,10 +1,10 @@
 # Voltron
 
-`UICollectionView` with `UIViewController`s instad of cells.
+`UICollectionView` with `UIViewController`s instead of cells.
 
 ![Illustration](https://raw.github.com/zats/Voltron/master/Illustration-1@2x.png)
 
-View controller containment complient!
+View controller containment compliant!
 
 ## Installation
 
@@ -34,7 +34,7 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 }
 ```
 
-* Once done displaying cell, call `didEndDisplayingCell:` passing the cell to give to the collection view a clue that it can be recycled.
+* Once done displaying cell, call `didEndDisplayingCell:` passing the cell to give the collection view a clue that it can be recycled.
 
 ```objective-c
 - (void)collectionView:(WMLCollectionView *)collectionView didEndDisplayingCell:(UICollectionViewCell *)cell forItemAtIndexPath:(NSIndexPath *)indexPath {
@@ -50,7 +50,7 @@ Yes.
 
 ### How often is the `collectionView:controllerForIdentifier:` being called?
 
-The data source method is called only when a new view controller being created, when possible, view controllers are being reused just like regular cells.
+The data source method is called only when a new view controller is created, when possible, view controllers are being reused just like regular cells.
 
 ### Is it a good place to configure my view controller with data?
 
