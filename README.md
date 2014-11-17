@@ -76,7 +76,7 @@ In that sense, test project is intended just as a showcase of how to use the API
 
 ### Why all the hassle with `collectionView:didEndDisplayingCell:forItemAtIndexPath:`?
 
-This project is intended as App Store-complient, therefore I wanted to implement it using the public API only.
+This project is intended as App Store-compliant, therefore I wanted to implement it using the public API only.
 
 ### Why not to use `collectionView:willDisplayCell:forItemAtIndexPath:` then?
 
