@@ -54,7 +54,7 @@ The data source method is called only when a new view controller is created, whe
 
 ### Is it a good place to configure my view controller with data?
 
-It's definitely not. Only one time initialisation, and that is better be done in `viewDidLoad` of the loaded view controller.
+It's definitely not. Only one time initialisation, and that is better to be done in `viewDidLoad` of the loaded view controller.
 
 To configure your view controller with data, use `-[WMLCollectionViewCell contentViewController]`
 
@@ -68,9 +68,9 @@ Once the view controller goes away from the screen, `viewWillDisappear:` and `vi
 
 You should keep in mind that in performance critical areas might suffer when you're trying to display too many cells simultaneously.
 
-Be wise about the moment of filling the collection view with data. E.g. it's probably better to differ displaying 200 small cells while playing an opening transition.
+Be wise about the moment of filling the collection view with data. E.g. it's probably better to defer displaying 200 small cells while playing an opening transition.
 
-For smooth scrolling try to differ the population of the controller with data.
+For smooth scrolling try to defer the population of the controller with data.
 
 In that sense, test project is intended just as a showcase of how to use the API, but it's obviously not a typical use case from performance point of view.
 
