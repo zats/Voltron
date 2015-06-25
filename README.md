@@ -1,3 +1,7 @@
+# Warning
+
+This was intended as a proof of concept, I don't really have any plans to support this project, so, please, mind the gap.
+
 # Voltron
 
 `UICollectionView` with `UIViewController`s instead of cells.
